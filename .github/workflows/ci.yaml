@@ -39,7 +39,7 @@ jobs:
       # 5️⃣ Jalankan MLflow Project
       - name: Run mlflow project
         run: |
-          mlflow run MLproject --env-manager=local
+          python MLproject/modelling.py
 
       # 6️⃣ Install Google API dependencies
       - name: Install Google API dependencies
