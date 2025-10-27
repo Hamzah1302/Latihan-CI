@@ -27,7 +27,8 @@ jobs:
 
       # 3️⃣ Cek environment variable (optional)
       - name: Check Env
-        run: echo "Dataset path: $CSV_URL"
+        run: |
+          echo "Dataset path: $CSV_URL"
 
       # 4️⃣ Install dependencies utama
       - name: Install dependencies
