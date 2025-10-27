@@ -53,3 +53,4 @@ jobs:
           git commit -m "Save mlruns from CI run" || echo "Nothing to commit"
 
           git push https://x-access-token:${GH_TOKEN}@github.com/Hamzah1302/Latihan-CI.git main
+
