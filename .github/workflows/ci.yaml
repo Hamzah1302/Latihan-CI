@@ -41,6 +41,18 @@ jobs:
         run: |
           mlflow run MLproject --env-manager=local
 
+
+      # 🧩 Tambahkan langkah ini untuk mengaktifkan Git LFS
+      - name: Set up Git LFS
+        run: |
+          git config --global user.name "${{ secrets.USERNAME }}"
+          git config --global user.email "${{ secrets.EMAIL }}"
+          git lfs install
+          git lfs track "mlruns/**"
+          git add .gitattributes
+          git commit -m "Track large files in mlruns with Git LFS" || true
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Hamzah1302/Latihan-CI.git main
+
       # 6️⃣ Simpan hasil run (mlruns) ke repo GitHub
       - name: Save mlruns to repo
         env:
